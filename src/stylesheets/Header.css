@@ -1,0 +1,16 @@
+.header {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 86.7%;
+  height: 50px;
+  border-bottom: 1px solid #d4d4d4;
+  font-family: "Trirong", serif;
+}
+/*# sourceMappingURL=Header.css.map */
