@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import FilterCards from "./FilterCards";
 
-const Filters = ({ image, setMainFilter }) => {
-  const [filtersTabOpen, setFiltersTabOpen] = useState(false);
+const Filters = ({
+  image,
+  setMainFilter,
+  filtersTabOpen,
+  setFiltersTabOpen,
+  setToolsTabOpen,
+  setBrightness,
+  setContrast,
+  setSaturation,
+}) => {
   const handleClick = () => {
+    setToolsTabOpen(false);
     filtersTabOpen ? setFiltersTabOpen(false) : setFiltersTabOpen(true);
   };
   return (
@@ -13,6 +22,9 @@ const Filters = ({ image, setMainFilter }) => {
         image={image}
         filtersTabOpen={filtersTabOpen}
         setMainFilter={setMainFilter}
+        setBrightness={setBrightness}
+        setSaturation={setSaturation}
+        setContrast={setContrast}
       />
     </div>
   );

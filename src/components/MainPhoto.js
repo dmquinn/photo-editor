@@ -1,9 +1,19 @@
 import React from "react";
 
-const MainPhoto = ({ image, mainFilter }) => {
+const MainPhoto = ({ image, mainFilter, contrast, brightness }) => {
   return (
     <>
-      <img src={image} alt="" className={`mainPhoto ${mainFilter}`}></img>
+      <img
+        src={image}
+        alt=""
+        className={`mainPhoto ${mainFilter}`}
+        style={{
+          filter:
+            contrast !== undefined &&
+            brightness !== undefined &&
+            `contrast(${contrast}%) brightness(${brightness}%)`,
+        }}
+      ></img>
     </>
   );
 };

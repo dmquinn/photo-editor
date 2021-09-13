@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import imageObjects from "../imageObjects";
 
-const ImageCard = ({ image, filtersTabOpen, setMainFilter }) => {
+const ImageCard = ({
+  image,
+  filtersTabOpen,
+  setMainFilter,
+  setBrightness,
+  setContrast,
+  setSaturation,
+}) => {
   const handleClick = (e) => {
+    setBrightness(undefined);
+    setContrast(undefined);
+    setSaturation(undefined);
     setMainFilter(e.target.className);
   };
   return (

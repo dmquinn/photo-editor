@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import ToolOptions from "./ToolOptions";
+import "../stylesheets/ToolOptions.css";
 
-const Tools = ({ image, setFiltersTabOpen }) => {
-  const [toolsTabOpen, setToolsTabOpen] = useState(false);
+const Tools = ({
+  image,
+  setFiltersTabOpen,
+  setToolsTabOpen,
+  toolsTabOpen,
+  setContrast,
+  setBrightness,
+}) => {
   const handleClick = () => {
-    toolsTabOpen ? setToolsTabOpen(false) : setToolsTabOpen(true);
     setFiltersTabOpen(false);
+    toolsTabOpen ? setToolsTabOpen(false) : setToolsTabOpen(true);
   };
   return (
     <div>
       <i className="fas fa-cogs" onClick={handleClick}></i>{" "}
-      <ToolOptions image={image} toolsTabOpen={toolsTabOpen} />
+      <ToolOptions
+        image={image}
+        toolsTabOpen={toolsTabOpen}
+        setContrast={setContrast}
+        setBrightness={setBrightness}
+      />
     </div>
   );
 };
