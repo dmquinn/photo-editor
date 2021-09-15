@@ -1,128 +1,88 @@
-body {
-  margin: 0;
-  width: 100vw;
-  max-width: 100%;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.filterOne {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
-.App {
-  max-width: 100%;
+.filterTwo {
+  -webkit-filter: contrast(50%) hue-rotate(10deg);
+  filter: contrast(50%) hue-rotate(10deg);
 }
 
-.filtersContainer {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 400px;
+.filterThree {
+  -webkit-filter: sepia(60%);
+  filter: sepia(60%);
 }
 
-.filtersContainer .imgContainer {
+.filterFour {
+  -webkit-filter: grayscale(100%) contrast(110%) brightness(130%);
+  filter: grayscale(100%) contrast(110%) brightness(130%);
+}
+.zeroPadding {
+  padding: 0;
+}
+.overlayOne {
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to left bottom,
+    #fe902a7e,
+    #ff9d2e81,
+    #b8ff457a,
+    #ff435f7c,
+    #eb127b8f
+  );
+}
+.overlayTwo {
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  background-image: url("https://i.pinimg.com/736x/85/50/fe/8550fe2433ff2ff562f170bd352bcd51.jpg");
+  opacity: 30%;
+  background-size: contain;
+}
+.overlayThree {
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  background-image: url("https://t4.ftcdn.net/jpg/02/46/18/43/360_F_246184388_B3Zv1TMtj42uBOltW0k9Bthy48S1AmsB.jpg");
+  mix-blend-mode: multiply;
+  background-size: contain;
+}
+.imgContainer {
   padding: 20px;
   height: 100px;
   width: 100px;
   background-size: cover;
   color: white;
-  -webkit-box-shadow: 0px 0px 60px 50px rgba(0, 0, 0, 0.281);
-          box-shadow: 0px 0px 60px 50px rgba(0, 0, 0, 0.281);
+  box-shadow: 0px 0px 60px 50px rgba(0, 0, 0, 0.281);
   border-radius: 15px;
 }
-
-.filtersContainer .imgContainer h3 {
-  text-shadow: 1px 1px black;
+.overlayContainer {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  color: white;
+  box-shadow: 0px 0px 60px 50px rgba(0, 0, 0, 0.281);
+  border-radius: 15px;
 }
-
-.fa-sliders-h,
-.fa-cogs {
-  position: absolute;
-  top: 150px;
-  font-size: 20px;
-  color: #1f1d24;
-  left: 30px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 50%;
-}
-
-.fa-cogs {
-  top: 250px;
-}
-
-.fa-camera-retro {
-  font-size: 50px;
-  line-height: 150%;
-  color: grey;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.fa-camera-retro:hover {
-  color: black;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.mainContainer {
-  background-color: #1f1d24;
-  padding: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  overflow: hidden;
-  height: 100vh;
-  max-width: 100%;
-}
-
-.mainContainer .mainPhoto {
+.mainPhoto {
   height: 500px;
   width: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-shadow: 0px 0px 60px 50px rgba(0, 0, 0, 0.281);
-          box-shadow: 0px 0px 60px 50px rgba(0, 0, 0, 0.281);
+  box-shadow: 0px 0px 80px 50px rgba(0, 0, 0, 0.651);
 }
-
-.toolOptions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 20px;
-  position: relative;
-  top: -400px;
-  right: 100px;
+i {
+  cursor: pointer;
 }
-
-.filterOne {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+i:hover {
+  filter: drop-shadow(0px 12px 12px black);
 }
-
-.filterTwo {
-  -webkit-filter: contrast(50%) hue-rotate(10deg);
-          filter: contrast(50%) hue-rotate(10deg);
-}
-
-.filterThree {
-  -webkit-filter: sepia(60%);
-          filter: sepia(60%);
-}
-
-.filterFour {
-  -webkit-filter: grayscale(100%) contrast(110%) brightness(130%);
-          filter: grayscale(100%) contrast(110%) brightness(130%);
-}
-
-@media screen and (max-width: 1060px) {
-  .filtersContainer {
-    width: 100px;
-  }
-}
-/*# sourceMappingURL=index.css.map */

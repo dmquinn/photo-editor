@@ -10,7 +10,7 @@ const Upload = ({ setImage }) => {
   return (
     <div>
       <label htmlFor="upload-button">
-        <i className="fas fa-camera-retro"></i>
+        <h1>Upload a Photo</h1>{" "}
       </label>
       <input
         type="file"

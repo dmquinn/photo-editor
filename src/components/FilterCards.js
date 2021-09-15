@@ -17,7 +17,7 @@ const ImageCard = ({
   };
   return (
     <div
-      className="filtersContainer"
+      className="grid grid-cols-3"
       style={{ visibility: filtersTabOpen ? "visible" : "hidden" }}
     >
       {imageObjects.map((card, i) => {
@@ -25,7 +25,7 @@ const ImageCard = ({
           <div
             className={card.className}
             onClick={(e) => handleClick(e)}
-            style={{ padding: "20px" }}
+            style={{ padding: "20px", cursor: "pointer" }}
           >
             <div
               className="imgContainer"

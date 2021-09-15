@@ -1,15 +1,20 @@
 import React from "react";
-import "../stylesheets/ToolOptions.css";
-
-const ToolOptions = ({ toolsTabOpen, setContrast, setBrightness }) => {
+import "../stylesheets/Sliders.css";
+const ToolOptions = ({
+  toolsTabOpen,
+  setContrast,
+  setBrightness,
+  setSaturation,
+}) => {
   return (
     <div
       style={{ visibility: toolsTabOpen ? "visible" : "hidden" }}
-      className="toolOptions"
+      className="px-20"
     >
       <div className="sliderContainer">
+        <p className="text-white p-1">Contrast</p>
         <input
-          min="0"
+          min="20"
           max="200"
           type="range"
           onChange={(e) => setContrast(e.target.value)}
@@ -17,8 +22,10 @@ const ToolOptions = ({ toolsTabOpen, setContrast, setBrightness }) => {
         ></input>
       </div>
       <div className="sliderContainer">
+        <p className="text-white p-1">Brightness</p>
+
         <input
-          min="0"
+          min="20"
           max="200"
           type="range"
           className="slider"
@@ -26,9 +33,19 @@ const ToolOptions = ({ toolsTabOpen, setContrast, setBrightness }) => {
         ></input>
       </div>
       <div className="sliderContainer">
-        <input type="range" className="slider"></input>
+        <p className="text-white p-1">Saturation</p>
+
+        <input
+          min="20"
+          max="200"
+          type="range"
+          className="slider"
+          onChange={(e) => setSaturation(e.target.value)}
+        ></input>
       </div>
       <div className="sliderContainer">
+        <p className="text-white p-1">Blur</p>
+
         <input type="range" className="slider"></input>
       </div>
     </div>

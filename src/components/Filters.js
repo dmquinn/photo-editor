@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import FilterCards from "./FilterCards";
 
 const Filters = ({
@@ -6,18 +6,19 @@ const Filters = ({
   setMainFilter,
   filtersTabOpen,
   setFiltersTabOpen,
-  setToolsTabOpen,
   setBrightness,
   setContrast,
   setSaturation,
 }) => {
   const handleClick = () => {
-    setToolsTabOpen(false);
     filtersTabOpen ? setFiltersTabOpen(false) : setFiltersTabOpen(true);
   };
   return (
     <div>
-      <i class="fas fa-sliders-h" onClick={handleClick}></i>
+      <i
+        className="fas fa-sliders-h text-gray-500 text-4xl"
+        onClick={handleClick}
+      ></i>
       <FilterCards
         image={image}
         filtersTabOpen={filtersTabOpen}
