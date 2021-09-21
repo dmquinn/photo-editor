@@ -1,9 +1,9 @@
 const imageObjects = [
   { className: "original", title: "Original" },
-  { className: "filterOne", title: "Filter One" },
-  { className: "filterTwo", title: "Filter Two" },
-  { className: "filterThree", title: "Filter Three" },
-  { className: "filterFour", title: "Filter Four" },
+  { className: "filterOne", title: "Dog Day Afternoon" },
+  { className: "filterTwo", title: "Taxi Driver" },
+  { className: "filterThree", title: "Donnie Brasco" },
+  { className: "filterFour", title: "Devil's Advocate" },
 ];
 
 export default imageObjects;

@@ -9,7 +9,7 @@ const OverlayCards = ({
 }) => {
   const handleClick = (e) => {
     console.log("clicked");
-    setMainOverlay(e.target.value);
+    setMainOverlay(e.target.className);
   };
   return (
     <div
@@ -25,7 +25,7 @@ const OverlayCards = ({
             }}
           >
             <div
-              className={card.className}
+              className={`overlay ${card.className}`}
               key={i}
               onClick={(e) => handleClick(e)}
             >

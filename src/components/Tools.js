@@ -8,6 +8,7 @@ const Tools = ({
   setContrast,
   setBrightness,
   setSaturation,
+  setBlur,
 }) => {
   const handleClick = () => {
     toolsTabOpen ? setToolsTabOpen(false) : setToolsTabOpen(true);
@@ -24,6 +25,7 @@ const Tools = ({
         setContrast={setContrast}
         setBrightness={setBrightness}
         setSaturation={setSaturation}
+        setBlur={setBlur}
       />
     </div>
   );

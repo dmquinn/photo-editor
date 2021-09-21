@@ -17,6 +17,7 @@ function App() {
   const [contrast, setContrast] = useState(undefined);
   const [brightness, setBrightness] = useState(undefined);
   const [saturation, setSaturation] = useState(undefined);
+  const [blur, setBlur] = useState(undefined);
 
   return (
     <>
@@ -31,6 +32,7 @@ function App() {
             setSaturation={setSaturation}
             setBrightness={setBrightness}
             setContrast={setContrast}
+            setBlur={setBlur}
           />
           <Tools
             image={image}
@@ -39,6 +41,7 @@ function App() {
             setContrast={setContrast}
             setBrightness={setBrightness}
             setSaturation={setSaturation}
+            setBlur={setBlur}
           />
         </div>
 
@@ -48,6 +51,7 @@ function App() {
           contrast={contrast}
           brightness={brightness}
           saturation={saturation}
+          blur={blur}
           mainOverlay={mainOverlay}
         />
         <div className="p-10">

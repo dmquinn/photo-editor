@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const MainPhoto = ({
   image,
@@ -8,6 +8,9 @@ const MainPhoto = ({
   saturation,
   mainOverlay,
 }) => {
+  useEffect(() => {
+    console.log("main", mainOverlay);
+  }, [mainOverlay]);
   const filterGetter = () => {
     if (
       contrast !== undefined &&
@@ -25,16 +28,16 @@ const MainPhoto = ({
   };
 
   return (
-    <div className="h-3/5">
+    <div className="mainImageContainer my-20 h-4/6">
       <img
         src={image}
         alt=""
-        className={`mainPhoto ${mainFilter} my-20 object-cover ${mainOverlay}`}
+        className={`mainPhoto ${mainFilter}  h-full w-full object-cover`}
         style={{
           filter: filterGetter(),
-          // boxShadow: contrast < 50 && "0px 0px 80px 50px rgb(0 0 0 / 0.281)",
         }}
-      ></img>
+      />{" "}
+      <div className={`${mainOverlay} mainPhotoOverlay`}></div>
     </div>
   );
 };

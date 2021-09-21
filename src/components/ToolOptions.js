@@ -5,6 +5,7 @@ const ToolOptions = ({
   setContrast,
   setBrightness,
   setSaturation,
+  setBlur,
 }) => {
   return (
     <div
@@ -45,8 +46,11 @@ const ToolOptions = ({
       </div>
       <div className="sliderContainer">
         <p className="text-white p-1">Blur</p>
-
-        <input type="range" className="slider"></input>
+        <input
+          type="range"
+          className="slider"
+          onChange={(e) => setBlur(e.target.value)}
+        ></input>
       </div>
     </div>
   );
