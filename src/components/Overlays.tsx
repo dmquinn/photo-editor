@@ -1,6 +1,12 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import OverlayCards from "./OverlayCards";
 
+interface Props {
+  overlaysTabOpen: boolean,
+  setOverlaysTabOpen: Dispatch<SetStateAction<boolean>>,
+  image: string,
+  setMainOverlay: Dispatch<SetStateAction<string>>
+}
 const Filters = ({
   overlaysTabOpen,
   setOverlaysTabOpen,
@@ -14,7 +20,7 @@ const Filters = ({
     <>
       <div className="flex justify-end">
         <i
-          class="far fa-clone text-gray-500 text-4xl"
+          className="far fa-clone text-gray-500 text-4xl"
           onClick={handleClick}
         ></i>
       </div>

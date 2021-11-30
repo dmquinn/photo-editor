@@ -1,7 +1,16 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import FilterCards from "./FilterCards";
 
-const Filters = ({
+interface Props {
+  image: string,
+    setMainFilter: Dispatch<SetStateAction<string>>
+    setFiltersTabOpen: Dispatch<SetStateAction<boolean>>
+    setBrightness: Dispatch<SetStateAction<number>>
+    setContrast: Dispatch<SetStateAction<number>>
+    setSaturation: Dispatch<SetStateAction<number>>
+    filtersTabOpen: boolean
+}
+const Filters:React.FC<Props> = ({
   image,
   setMainFilter,
   filtersTabOpen,

@@ -1,11 +1,15 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import overlayObjects from "../overlayObjects";
 
-const OverlayCards = ({
+interface Props {
+  overlaysTabOpen: boolean;
+  image: string,
+  setMainOverlay: Dispatch<SetStateAction<string>>
+}
+const OverlayCards:React.FC<Props> = ({
   overlaysTabOpen,
   image,
   setMainOverlay,
-  mainOverlay,
 }) => {
   const handleClick = (e) => {
     console.log("clicked");

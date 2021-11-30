@@ -1,6 +1,15 @@
 import React, { useEffect } from "react";
 
-const MainPhoto = ({
+interface Props {
+  image: string,
+  mainFilter: string,
+  brightness: number,
+  saturation: number,
+    contrast: number
+
+  mainOverlay: string
+}
+const MainPhoto:React.FC<Props> = ({
   image,
   mainFilter,
   contrast,

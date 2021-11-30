@@ -1,11 +1,19 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import "../stylesheets/Sliders.css";
+
+interface Props {
+  toolsTabOpen: boolean,
+  setContrast: Dispatch<SetStateAction<number>>
+  setBrightness: Dispatch<SetStateAction<number>>
+  setSaturation: Dispatch<SetStateAction<number>>
+
+
+}
 const ToolOptions = ({
   toolsTabOpen,
   setContrast,
   setBrightness,
   setSaturation,
-  setBlur,
 }) => {
   return (
     <div
@@ -22,17 +30,7 @@ const ToolOptions = ({
           className="slider"
         ></input>
       </div>
-      <div className="sliderContainer">
-        <p className="text-white p-1">Brightness</p>
-
-        <input
-          min="20"
-          max="200"
-          type="range"
-          className="slider"
-          onChange={(e) => setBrightness(e.target.value)}
-        ></input>
-      </div>
+      
       <div className="sliderContainer">
         <p className="text-white p-1">Saturation</p>
 
@@ -44,14 +42,19 @@ const ToolOptions = ({
           onChange={(e) => setSaturation(e.target.value)}
         ></input>
       </div>
+
       <div className="sliderContainer">
-        <p className="text-white p-1">Blur</p>
+        <p className="text-white p-1">Brightness</p>
+
         <input
+          min="20"
+          max="200"
           type="range"
           className="slider"
-          onChange={(e) => setBlur(e.target.value)}
+          onChange={(e) => setBrightness(e.target.value)}
         ></input>
       </div>
+    
     </div>
   );
 };

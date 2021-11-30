@@ -1,6 +1,9 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
-const Upload = ({ setImage }) => {
+interface Props {
+  setImage: Dispatch<SetStateAction<string>>
+}
+const Upload:React.FC<Props> = ({ setImage }) => {
   const handleChange = (e) => {
     if (e.target.files.length) {
       setImage(URL.createObjectURL(e.target.files[0]));

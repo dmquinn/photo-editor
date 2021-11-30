@@ -5,19 +5,18 @@ import Filters from "./components/Filters";
 import Tools from "./components/Tools";
 import Overlays from "./components/Overlays";
 
-function App() {
-  const [image, setImage] = useState(
+const App:React.FC = () => {
+  const [image, setImage] = useState<string>(
     "https://images.unsplash.com/photo-1612325253300-0d45438c1d0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1868&q=80"
   );
-  const [mainFilter, setMainFilter] = useState("");
-  const [filtersTabOpen, setFiltersTabOpen] = useState("");
-  const [toolsTabOpen, setToolsTabOpen] = useState(false);
-  const [overlaysTabOpen, setOverlaysTabOpen] = useState(false);
-  const [mainOverlay, setMainOverlay] = useState("");
-  const [contrast, setContrast] = useState(undefined);
-  const [brightness, setBrightness] = useState(undefined);
-  const [saturation, setSaturation] = useState(undefined);
-  const [blur, setBlur] = useState(undefined);
+  const [mainFilter, setMainFilter] = useState<string>("");
+  const [filtersTabOpen, setFiltersTabOpen] = useState<boolean>(false);
+  const [toolsTabOpen, setToolsTabOpen] = useState<boolean>(false);
+  const [overlaysTabOpen, setOverlaysTabOpen] = useState<boolean>(false);
+  const [mainOverlay, setMainOverlay] = useState<string>("");
+  const [contrast, setContrast] = useState<number>(100);
+  const [brightness, setBrightness] = useState<number>(100);
+  const [saturation, setSaturation] = useState<number>(100);
 
   return (
     <>
@@ -32,7 +31,6 @@ function App() {
             setSaturation={setSaturation}
             setBrightness={setBrightness}
             setContrast={setContrast}
-            setBlur={setBlur}
           />
           <Tools
             image={image}
@@ -41,7 +39,6 @@ function App() {
             setContrast={setContrast}
             setBrightness={setBrightness}
             setSaturation={setSaturation}
-            setBlur={setBlur}
           />
         </div>
 
@@ -51,7 +48,6 @@ function App() {
           contrast={contrast}
           brightness={brightness}
           saturation={saturation}
-          blur={blur}
           mainOverlay={mainOverlay}
         />
         <div className="p-10">
